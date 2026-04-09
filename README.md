@@ -79,7 +79,7 @@ Setelah dienter, Anda akan melihat pesan "Waktu berhasil diatur!"
 ### 3. Lihat Hasil
 Display OLED akan menampilkan:
 ```
-       Agna's Clock
+   your's Clock
 =====================
      14:30:00
 =====================
