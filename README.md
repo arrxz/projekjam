@@ -1,4 +1,4 @@
-# Agna's Digital Clock (Jam Digital Arduino)
+# Digital Clock (Jam Digital Arduino)
 
 Proyek Arduino untuk membuat jam digital dengan tampilan **OLED SSD1306 128x64** dan modul **RTC DS1307** untuk mencatat waktu secara real-time.
 
