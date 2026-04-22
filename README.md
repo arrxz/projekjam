@@ -1,7 +1,7 @@
 # ESP Digital Wristwatch (Jam Tangan Digital ESP)
 
 Proyek Arduino untuk membuat jam tangan digital dengan tampilan **OLED SSD1306 128x64** dan modul **RTC DS1307** untuk mencatat waktu secara real-time. Project ini sempurna untuk diintegrasikan ke dalam jam tangan digital yang stylish dan fungsional.
-<img width="960" height="1280" alt="wear img" src="https://github.com/user-attachments/assets/682ba7db-bc96-4138-8296-d637fa8c3e70" />
+<img width="400" height="750" alt="wear img" src="https://github.com/user-attachments/assets/682ba7db-bc96-4138-8296-d637fa8c3e70" />
 <img width="960" height="1280" alt="display" src="https://github.com/user-attachments/assets/59def669-8909-4a53-bd48-0f4d03281160" />
 
 
