@@ -1,9 +1,16 @@
 # ESP Digital Wristwatch (Jam Tangan Digital ESP)
 
 Proyek Arduino untuk membuat jam tangan digital dengan tampilan **OLED SSD1306 128x64** dan modul **RTC DS1307** untuk mencatat waktu secara real-time. Project ini sempurna untuk diintegrasikan ke dalam jam tangan digital yang stylish dan fungsional.
-<img width="30%" height="30%" alt="wear img" src="https://github.com/user-attachments/assets/682ba7db-bc96-4138-8296-d637fa8c3e70" />
-<img width="30%" height="30%" alt="display" src="https://github.com/user-attachments/assets/59def669-8909-4a53-bd48-0f4d03281160" />
 
+---
+
+## 📷 Gambar Project
+
+| Wearable Watch | OLED Display |
+|---|---|
+| ![Wearable Image](https://github.com/user-attachments/assets/682ba7db-bc96-4138-8296-d637fa8c3e70) | ![Display Image](https://github.com/user-attachments/assets/59def669-8909-4a53-bd48-0f4d03281160) |
+
+---
 
 ## 📋 Deskripsi Project
 
@@ -12,6 +19,8 @@ Project ini menampilkan:
 - **Hari & Tanggal**: Menampilkan hari (Min, Sen, Sel, Rab, Kam, Jum, Sab) dan tanggal dalam format `DD.MM.YYYY`
 - **Interface**: Tampilan clean dan minimalis yang cocok untuk jam tangan
 - **Pengaturan Waktu**: Dapat mengatur waktu RTC melalui Serial Monitor dengan mudah
+
+---
 
 ## 🛠️ Hardware yang Digunakan
 
@@ -23,6 +32,8 @@ Project ini menampilkan:
 | **Kabel** | Untuk koneksi antar komponen |
 | **USB Cable** | Micro USB untuk programming |
 | **Baterai 3.7** | Baterai lipo kecil untuk power |
+
+---
 
 ## 🔌 Koneksi Pin
 
@@ -37,11 +48,14 @@ Project ini menampilkan:
 | **GND** | GND | GND (semua komponen) |
 | **VCC** | 3V3 atau 5V | 3V3 atau 5V (lihat spesifikasi modul) |
 
-**Catatan Penting**:
+### ⚠️ Catatan Penting
+
 - NodeMCU ESP8266 menggunakan pin I2C default: **D1 (GPIO5)** untuk SCL dan **D2 (GPIO4)** untuk SDA
 - OLED dan RTC berbagi bus I2C yang sama dengan alamat I2C berbeda (OLED: 0x3C, RTC: 0x68)
 - Gunakan **3.3V untuk power** (ESP8266 native), atau gunakan level shifter jika menggunakan 5V
 - Tambahkan **resistor pull-up 4.7kΩ** pada pin SDA dan SCL untuk stabilitas I2C
+
+---
 
 ## 📚 Library yang Diperlukan
 
@@ -62,9 +76,12 @@ Install library berikut melalui Arduino IDE (Sketch → Include Library → Mana
 3. Cari nama library di atas
 4. Klik **Install**
 
+---
+
 ## 🚀 Cara Menggunakan
 
 ### 0. Setup Arduino IDE untuk NodeMCU ESP8266
+
 1. Buka Arduino IDE
 2. Klik **File** → **Preferences**
 3. Di bagian "Additional Board Manager URLs", tambahkan:
@@ -78,6 +95,7 @@ Install library berikut melalui Arduino IDE (Sketch → Include Library → Mana
 8. Setup **Tools** → **Port** ke port COM yang sesuai
 
 ### 1. Upload Kode ke NodeMCU
+
 1. Buka file `projekjam.ino` di Arduino IDE
 2. Pastikan board sudah dipilih: **Tools** → **Board** → **NodeMCU 1.0**
 3. Pilih port COM yang benar (Tools → Port)
@@ -85,6 +103,7 @@ Install library berikut melalui Arduino IDE (Sketch → Include Library → Mana
 5. Klik **Upload** (tombol panah ke kanan)
 
 ### 2. Mengatur Waktu RTC
+
 Setelah upload berhasil, buka **Serial Monitor** (Ctrl + Shift + M) dengan baud rate **115200**:
 
 ```
@@ -97,8 +116,8 @@ Contoh: SET 14 30 00 11 08 2025
 - Tanggal: 11 Agustus 2025
 - Masukkan: `SET 14 30 00 11 08 2025`
 
-Setelah dienter, Anda akan melihat pesan "Waktu berhasil diatur!"
-Display OLED akan menampilkan:
+Setelah dienter, Anda akan melihat pesan "Waktu berhasil diatur!" Display OLED akan menampilkan:
+
 ```
      Digital Wristwatch
 =====================
@@ -106,6 +125,8 @@ Display OLED akan menampilkan:
 =====================
    Min, 11.08.2025
 ```
+
+---
 
 ## 📝 Penjelasan Kode
 
@@ -129,6 +150,8 @@ const char* daysOfTheWeek[7] = {
 ```
 Array untuk nama hari dalam bahasa Indonesia (singkat)
 
+---
+
 ## 🎯 Spesifikasi Jam Tangan
 
 | Aspek | Detail |
@@ -142,9 +165,12 @@ Array untuk nama hari dalam bahasa Indonesia (singkat)
 | **Antar Muka** | Serial Monitor via Micro USB |
 | **Bonus** | WiFi-ready untuk sinkronisasi waktu otomatis |
 
+---
+
 ## 🔧 Kemasan untuk Jam Tangan
 
 Untuk mengintegrasikan ke jam tangan fisik:
+
 1. **Casing 3D**: Desain casing yang pas untuk Mikrokontroller dan OLED
 2. **Baterai**: Gunakan baterai 3.7V rechargeable
 3. **Display Mounting**: Pasang OLED dengan secure sehingga tidak mudah bergeser
@@ -166,26 +192,26 @@ Untuk mengintegrasikan ke jam tangan fisik:
 | **Waktu melompat** | Kristal RTC rusak atau koneksi I2C tidak stabil, tambah resistor pull-up |
 | **NodeMCU restart sendiri** | Cek power supply (minimal 500mA), mungkin arus I2C kurang stabil |
 
+---
+
 ## 💡 Fitur yang Bisa Dikembangkan
 
 - [ ] Sinkronisasi waktu otomatis via WiFi (NTP)
 - [ ] Menambah alarm functionality dengan vibration motor
-- [ ] Menambah mode 12-jam/24-jam dengan toggle button
-- [ ] Menambah brightness control untuk OLED dengan sensor cahaya
-- [ ] Menyimpan multiple alarms di EEPROM
 - [ ] Integrasi dengan sensor detak jantung (pulse sensor)
 - [ ] Menampilkan suhu dan kelembaban dengan DHT22
 - [ ] Mode stopwatch / timer untuk fitness tracking
 - [ ] WebUI dashboard untuk konfigurasi via WiFi
 - [ ] Battery status indicator dengan ADC
-- [ ] Over-The-Air (OTA) firmware update via WiFi
-- [ ] Data logging ke cloud (ThingSpeak, Firebase)
-- [ ] Custom watch face themes dengan touchscreen
 - [ ] Deep sleep mode untuk hemat daya
+
+---
 
 ## 📄 Lisensi
 
 Project ini tersedia untuk penggunaan pribadi, edukatif, dan non-komersial.
+
+---
 
 ## 🔗 References & Resources
 
@@ -207,4 +233,4 @@ Project ini tersedia untuk penggunaan pribadi, edukatif, dan non-komersial.
 
 ---
 
-**ESPCLOCK**
+**ESPCLOCK** ⏰
